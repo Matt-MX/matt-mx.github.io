@@ -1,0 +1,27 @@
+[
+    {
+        "name": "KtPaperGui",
+        "description": "A high level library for creating Paper plugins. Create advanced guis flawlessly with the kotlin dsl, with signals. Features commands, events, components, scoreboards, scheduling and more!",
+        "thumb": "",
+        "url": "https://github.com/Matt-MX/KtPaperGui",
+        "tags": [
+            "Public", "Library", "Kotlin", "Paper", "Gui"
+        ]
+    },
+    {
+        "name": "Playerkits (Private)",
+        "description": "Private, high-level plugin for PvPHub compiled using KtPaperGui. Allows players to create kits with high customization and features.",
+        "thumb": "",
+        "tags": [
+            "Private", "Paper", "Kotlin", "MongoDB"
+        ]
+    },
+    {
+        "name": "Iris",
+        "description": "A scalable architecture for my Minecraft server, PvPHub. It allows for multiple backend servers to connect together seemlessly with a strong API to help make more advanced features!",
+        "thumb": "",
+        "tags": [
+            "Private", "Paper", "Kotlin", "REDiS", "MongoDB"
+        ]
+    }
+]

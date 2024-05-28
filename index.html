@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./main.css">
+    <script src="main.js" lang="js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="View MattMX's software projects and developments.">
+    <meta name="keywords" content="MattMX, Developer, Software, Portfolio">
+    <meta name="author" content="MattMX">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="loading-overlay">
+        <div class="avatar-mask">
+            <div class="spinny" style="width: 10rem !important; background-color: var(--bg-primary-medium);"></div>
+        </div>
+        <h2>Loading</h2>
+    </div>
+    <!-- https://www.google.com/search?q=ui+portfolio+projects&sca_esv=de6110bbe0542023&sca_upv=1&rlz=1C1ONGR_en-GBGB992GB992&udm=2&biw=1920&bih=911&sxsrf=ADLYWIJP6E49MvYJrrKDYTcRsRWDRpQrVA%3A1716934973498&ei=PVlWZvuFHqz_7_UPjvmIqA8&ved=0ahUKEwi7mMqZsbGGAxWs_7sIHY48AvUQ4dUDCBA&uact=5&oq=ui+portfolio+projects&gs_lp=Egxnd3Mtd2l6LXNlcnAiFXVpIHBvcnRmb2xpbyBwcm9qZWN0czIHEAAYgAQYGEjwJFDCBlirJHABeACQAQCYAaQCoAGnDaoBBjIwLjAuMbgBA8gBAPgBAZgCFqAC1w3CAgkQABiABBgYGArCAgoQABiABBhDGIoFwgIIEAAYgAQYsQPCAgUQABiABMICDRAAGIAEGLEDGEMYigXCAgYQABgFGB7CAgYQABgIGB7CAgQQABgemAMAiAYBkgcGMjEuMC4xoAfoUQ&sclient=gws-wiz-serp#vhid=bxW_1UIRBfGWIM&vssid=mosaic -->
+    <div class="main-container">
+
+        <div class="nav-container">
+            <nav id="nav">
+                <button 
+                    id="av-m-mobile" 
+                    class="avatar-mask" 
+                    style="display: none;"
+                    onclick="toggleResponsiveNav()"
+                >
+                    <div></div>
+                    <h1>MattMX</h1>
+                </button>
+                <a href="#about" onclick="refreshSections()">About</a>
+                <a href="#projects" onclick="refreshSections()">Projects</a>
+                <div id="av-m-desktop" class="avatar-mask">
+                    <div></div>
+                </div>
+                <a href="#resume" onclick="refreshSections()">Resume</a>
+                <a href="#contact" onclick="refreshSections()">Contact</a>
+            </nav>
+        </div>
+
+        <div class="main">
+
+            <section id="about">
+                <h1 id="about-title">
+                    MattMX
+                    <img class="me" src="./assets/me_transparent.png">
+                </h1>
+
+                <h3>About me</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi blanditiis placeat sed ratione
+                    accusamus
+                    quas. Libero rerum optio ad. Voluptatem saepe aut nihil repellendus recusandae dolores quasi hic
+                    mollitia laborum!</p>
+            </section>
+
+            <section id="projects">
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+                <a class="project" href="/project/id">
+                    <div class="thumb">
+                        <img class="thumb" src="./assets/thumb.png">
+                    </div>
+
+                    <h2>Iris</h2>
+                </a>
+
+            </section>
+
+            <section id="resume">
+                <h1>meow</h1>
+            </section>
+
+            <section id="contact">
+                <h1>Contact</h1>
+            </section>
+
+        </div>
+    </div>
+</body>
+
+</html>
