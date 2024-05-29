@@ -1,15 +1,26 @@
 [
     {
+        "id": "ktgui",
         "name": "KtPaperGui",
         "description": "A high level library for creating Paper plugins. Create advanced guis flawlessly with the kotlin dsl, with signals. Features commands, events, components, scoreboards, scheduling and more!",
-        "thumb": "",
+        "thumb": "https://repository-images.githubusercontent.com/530062987/b0abfd50-7b6d-42c5-b65b-094877030a25",
         "url": "https://github.com/Matt-MX/KtPaperGui",
         "tags": [
             "Public", "Library", "Kotlin", "Paper", "Gui"
         ]
     },
     {
-        "name": "Playerkits (Private)",
+        "id": "iris",
+        "name": "Iris",
+        "description": "A scalable architecture for my Minecraft server, PvPHub. It allows for multiple backend servers to connect together seemlessly with a strong API to help make more advanced features!",
+        "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
+        "tags": [
+            "Private", "Paper", "Kotlin", "REDiS", "MongoDB"
+        ]
+    },
+    {
+        "id": "pkits",
+        "name": "Playerkits",
         "description": "Private, high-level plugin for PvPHub compiled using KtPaperGui. Allows players to create kits with high customization and features.",
         "thumb": "",
         "tags": [
@@ -17,11 +28,13 @@
         ]
     },
     {
-        "name": "Iris",
-        "description": "A scalable architecture for my Minecraft server, PvPHub. It allows for multiple backend servers to connect together seemlessly with a strong API to help make more advanced features!",
-        "thumb": "",
+        "id": "something",
+        "name":"Archived thing",
+        "description": "test",
+        "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
+        "class": "archived",
         "tags": [
-            "Private", "Paper", "Kotlin", "REDiS", "MongoDB"
+            "Gui", "Java", "Library"
         ]
     }
 ]
