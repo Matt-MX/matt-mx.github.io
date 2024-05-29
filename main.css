@@ -248,6 +248,17 @@ nav>#av-m-desktop:hover>div {
     29% {
         transform: translate(90px, 33px);
     }
+    
+    30%, 31% {
+        transform: translate(0px, 200%);
+    }
+
+    50%, 70% {
+        transform: translate(0px, 10px);
+    }
+    60% {
+        transform: translate(0px, 10px) scaleX(-1);
+    }
 }
 
 .avatar-mask {
