@@ -51,7 +51,7 @@
     {
         "id": "website",
         "name": "Portfolio",
-        "description": "The website you're on now, currently made with plain HTML/CSS/JS. Have you found any little secrets, yet?",
+        "description": "The website you're on now, created using plain HTML/CSS/JS. Have you found any little secrets yet?",
         "thumb": "/assets/me.png",
         "tags": [
             "HTML", "CSS", "JS", "Frontend", "Public"

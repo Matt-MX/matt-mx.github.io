@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>MattMX</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./main.css">
     <script src="main.js" lang="js"></script>
 
@@ -28,13 +29,10 @@
 
         <div class="nav-container">
             <nav id="nav">
-                <button
-                    style="display: none;"
-                    onclick="toggleResponsiveNav()"
-                >
-                <div class="avatar-mask" id="av-m-mobile">
-                    <div></div>
-                </div>
+                <button class="nav-toggle-btn" style="display: none;" onclick="toggleResponsiveNav()">
+                    <div class="avatar-mask" id="av-m-mobile">
+                        <div></div>
+                    </div>
                     <h1>MattMX</h1>
                 </button>
                 <a href="#about" onclick="refreshSections()">About</a>
@@ -44,6 +42,9 @@
                 </div>
                 <a href="#resume" onclick="refreshSections()">Resume</a>
                 <a href="#contact" onclick="refreshSections()">Contact</a>
+                <button id="toggle-theme" class="theme">
+                    <i class="fa fa-sun-o"></i>
+                </button>
             </nav>
         </div>
 
@@ -75,22 +76,6 @@
 
             <section id="projects">
                 <div id="modal-container" class="modal-container">
-                    <div class="modal">
-                        <div class="thumb">
-                            <img src="assets/thumb.png">
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="text">
-                            <h1>Title</h1>
-                            <p>description</p>
-                        </div>
-
-                        <div class="tags">
-                            <span>Tag</span>
-                            <span>Tag</span>
-                            <span>Tag</span>
-                        </div>
-                    </div>
                 </div>
                 <!-- Programatically filled using js -->
             </section>
@@ -102,8 +87,25 @@
             <section id="contact">
                 <h1>Contact</h1>
             </section>
-
         </div>
+
+        <footer>
+            <div class="main">
+                <div class="ex-links">
+                    <div class="logo avatar-mask">
+                        <div></div>
+                    </div>
+                    <div class="links">
+                        <a href="#about" onclick="refreshSections()">About</a>
+                        <a href="#projects" onclick="refreshSections()">Projects</a>
+                        <a href="#resume" onclick="refreshSections()">Resume</a>
+                        <a href="#contact" onclick="refreshSections()">Contact</a>
+                    </div>
+                </div>
+                <p><i class="fa fa-copyright"></i> mattmx.dev 2024</p>
+                <p>All displayed content belongs to me, MattMX, the copyright holder.</p>
+            </div>
+        </footer>
     </div>
 </body>
 

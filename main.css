@@ -14,6 +14,18 @@
     --tint: #CA7F61;
 }
 
+[data-theme="light"] {
+    --text-primary: #3A294B;
+    --bg-primary-heavy: var(--tint);
+    --bg-primary-medium: var(--red-medium);
+    --bg-primary-light: #3A294B;
+}
+
+[data-theme="light"] .tags span {
+    background-color: var(--red-medium) !important;
+    color: var(--tint);
+}
+
 body {
     background-color: var(--bg-primary-heavy);
     color: var(--text-primary);
@@ -83,16 +95,33 @@ body {
 
 section {
     display: none;
+    padding-top: clamp(15px, 5%, 50px);
+    padding-bottom: clamp(15px, 5%, 50px);
 }
 
 div.nav-container {
     flex: 0.5;
+    position: relative;
+}
+
+button.theme {
+    position: absolute;
+    right: -1rem;
+    transform: translate(100%, 0);
+    border: none;
+    color: var(--bg-primary-light);
+    background-color: transparent;
+    padding: 0 0.5rem;
+    font-size: large;
+    cursor: pointer;
 }
 
 nav {
+    float: left;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
     border: 1px solid var(--bg-primary-light);
+    box-sizing: border-box;
     color: var(--bg-primary-light);
     display: flex;
     gap: 2rem;
@@ -414,6 +443,10 @@ a {
     color: inherit;
 }
 
+[data-theme="light"] .modal-container {
+    background-color: color-mix(in srgb, var(--text-primary), transparent 40%) !important;
+}
+
 .modal-container {
     width: 100%;
     height: 100%;
@@ -430,6 +463,7 @@ a {
 }
 
 .modal {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: min(50%, 50rem);
@@ -439,6 +473,19 @@ a {
     overflow: hidden;
     border: 1px solid var(--bg-primary-light);
     z-index: 9999;
+}
+
+.modal > button#close-modal {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--text-primary);
+    font-size: larger;
+    z-index: 999;
+    cursor: pointer;
+    padding: 1rem;
 }
 
 .modal>.thumb {
@@ -490,6 +537,51 @@ a {
     box-sizing: border-box;
 }
 
+footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: var(--bg-primary-medium);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > .main {
+    padding: 1rem 0rem;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer > .main * {
+    color: var(--bg-primary-heavy);
+}
+
+footer > .main > .ex-links {
+    flex-basis: 100%;
+    display: flex;
+}
+
+footer > .main > .ex-links > .logo {
+    flex-basis: 1;
+    height: 4rem;
+    width: 4rem;
+    animation: none !important;
+}
+
+.ex-links > .logo > div {
+    top: 0;
+    left: 0;
+    transform: none;
+    background-color: var(--bg-primary-heavy);
+    border: 3px solid var(--bg-primary-heavy);
+}
+
+.ex-links > .links {
+    display: flex;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 600px) {
 
     /* .main-container {
@@ -506,13 +598,14 @@ a {
     nav {
         flex-direction: column;
         position: relative;
+        width: 100%;
     }
 
     nav>#av-m-desktop {
         display: none;
     }
 
-    nav button {
+    nav button.nav-toggle-btn {
         width: 100% !important;
         display: flex !important;
         align-items: center;
@@ -523,6 +616,14 @@ a {
         background-color: transparent;
         outline: none;
         border: none;
+    }
+
+    nav button.theme {
+        padding: 1rem;
+        font-size: larger;
+        right: 1rem;
+        top: 0.5rem;
+        transform: none;
     }
 
     nav div#av-m-mobile {
