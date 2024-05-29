@@ -4,7 +4,10 @@
         "name": "KtPaperGui",
         "description": "A high level library for creating Paper plugins. Create advanced guis flawlessly with the kotlin dsl, with signals. Features commands, events, components, scoreboards, scheduling and more!",
         "thumb": "https://repository-images.githubusercontent.com/530062987/b0abfd50-7b6d-42c5-b65b-094877030a25",
-        "url": "https://github.com/Matt-MX/KtPaperGui",
+        "url": {
+            "url": "https://github.com/Matt-MX/KtPaperGui",
+            "label": "GitHub"
+        },
         "tags": [
             "Public", "Library", "Kotlin", "Paper", "Gui"
         ]
@@ -15,26 +18,53 @@
         "description": "A scalable architecture for my Minecraft server, PvPHub. It allows for multiple backend servers to connect together seemlessly with a strong API to help make more advanced features!",
         "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
         "tags": [
-            "Private", "Paper", "Kotlin", "REDiS", "MongoDB"
+            "Private", "Paper", "Kotlin", "REDiS", "MongoDB", "Packets"
+        ]
+    },
+    {
+        "id": "graphite",
+        "name": "Graphite",
+        "description": "Web interface to view player's pvp stats, kits and more.",
+        "thumb": "",
+        "tags": [
+            "Private", "SvelteKit", "FullStack", "CSS", "MongoDB", "Statistics", "Paper", "Plugin", "Kotlin", "TypeScript"
         ]
     },
     {
         "id": "pkits",
         "name": "Playerkits",
         "description": "Private, high-level plugin for PvPHub compiled using KtPaperGui. Allows players to create kits with high customization and features.",
-        "thumb": "",
+        "thumb": "https://media.discordapp.net/attachments/1068003290983444550/1239991665708765276/image.png?ex=66580d7b&is=6656bbfb&hm=c66e16b167c1d7ed0f56a69eb2f2e1e205cbfeeec85e23cec9c7a12e8604bcbd&=&format=webp&quality=lossless&width=1182&height=560",
         "tags": [
-            "Private", "Paper", "Kotlin", "MongoDB"
+            "Private", "Paper", "Kotlin", "MongoDB", "SQL", "Plugin"
         ]
     },
     {
-        "id": "something",
-        "name":"Archived thing",
-        "description": "test",
-        "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
+        "id": "event",
+        "name": "Events",
+        "description": "High level plugin for hosting in-game events. Extremely cutomizable, allowing any player to choose how the event runs and manage it along the way.",
+        "thumb": "https://media.discordapp.net/attachments/1238288481781026846/1238846570963800106/image.png?ex=6657d787&is=66568607&hm=b47389fbc8385fc4436ee2e283219c634d5ed75eff09315210c2f8779a219a75&=&format=webp&quality=lossless&width=550&height=276",
+        "tags": [
+            "Private", "Paper", "Kotlin", "MongoDB", "Plugin", "Gui", "REDiS"
+        ]
+    },
+    {
+        "id": "website",
+        "name": "Portfolio",
+        "description": "The website you're on now, currently made with plain HTML/CSS/JS. Have you found any little secrets, yet?",
+        "thumb": "/assets/me.png",
+        "tags": [
+            "HTML", "CSS", "JS", "Frontend", "Public"
+        ]
+    },
+    {
+        "id": "rv",
+        "name": "ReconnectVelocity",
+        "description": "Velocity plugin that saves the last connected server of your players and attempts to reconnect them when rejoining. Very extensive customization options.",
+        "thumb": "https://github.com/Matt-MX/ReconnectVelocity/raw/master/rc_banner.png",
         "class": "archived",
         "tags": [
-            "Gui", "Java", "Library"
+            "Velocity", "Java", "Plugin", "SQL"
         ]
     }
 ]
