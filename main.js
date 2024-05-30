@@ -40,6 +40,19 @@ $(() => {
         $(this).text(text)
     })
 
+    $(".logo").click(function() {
+        $(this).addClass("footer-anim")
+        $(".footer-anim-logo").addClass("animated")
+        $(".car-container").addClass("animated")
+        $(".buildings").addClass("animated")
+        setTimeout(() => {
+            $(this).removeClass("footer-anim")
+            $(".footer-anim-logo").removeClass("animated")
+            $(".car-container").removeClass("animated")
+            $(".buildings").removeClass("animated")
+        }, 10000)
+    })
+
     fetch("./projects.json").then((data) => data.json())
         .then((json) => {
             projects = json
