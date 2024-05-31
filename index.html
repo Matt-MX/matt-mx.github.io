@@ -7,7 +7,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./game.css">
     <script src="main.js" lang="js"></script>
+    <script src="game.js" lang="js"></script>
 
     <meta charset="UTF-8">
     <meta name="description" content="View MattMX's software projects and developments.">
@@ -24,7 +26,6 @@
         </div>
         <h2>Loading</h2>
     </div>
-    <!-- https://www.google.com/search?q=ui+portfolio+projects&sca_esv=de6110bbe0542023&sca_upv=1&rlz=1C1ONGR_en-GBGB992GB992&udm=2&biw=1920&bih=911&sxsrf=ADLYWIJP6E49MvYJrrKDYTcRsRWDRpQrVA%3A1716934973498&ei=PVlWZvuFHqz_7_UPjvmIqA8&ved=0ahUKEwi7mMqZsbGGAxWs_7sIHY48AvUQ4dUDCBA&uact=5&oq=ui+portfolio+projects&gs_lp=Egxnd3Mtd2l6LXNlcnAiFXVpIHBvcnRmb2xpbyBwcm9qZWN0czIHEAAYgAQYGEjwJFDCBlirJHABeACQAQCYAaQCoAGnDaoBBjIwLjAuMbgBA8gBAPgBAZgCFqAC1w3CAgkQABiABBgYGArCAgoQABiABBhDGIoFwgIIEAAYgAQYsQPCAgUQABiABMICDRAAGIAEGLEDGEMYigXCAgYQABgFGB7CAgYQABgIGB7CAgQQABgemAMAiAYBkgcGMjEuMC4xoAfoUQ&sclient=gws-wiz-serp#vhid=bxW_1UIRBfGWIM&vssid=mosaic -->
     <div class="main-container">
 
         <div class="nav-container">
@@ -134,6 +135,25 @@
                 <!-- <p>All displayed content belongs to me, MattMX, the copyright holder.</p> -->
             </div>
         </footer>
+
+        <div id="runner-game" class="game visible">
+            <div class="game-sky">
+                <div class="player-wrapper">
+                    <div id="runner-player" class="player avatar-mask">
+                        <div></div>
+                    </div>
+                </div>
+                <div id="runner-objects" class="game-obj">
+                    <!-- <div class="obj" style="width: 2rem; height: 2rem;"></div> -->
+                </div>
+            </div>
+            <div class="game-floor">
+            </div>
+            <div class="score">
+                <h3>Distance <span id="runner-game-score">0m</span></h3>
+                <h3>Speed <span id="runner-game-speed">100%</span></h3>
+            </div>
+        </div>
     </div>
 </body>
 
