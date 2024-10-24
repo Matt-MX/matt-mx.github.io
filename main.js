@@ -24,12 +24,28 @@ $(() => {
 
         document.documentElement.setAttribute("data-theme", newTheme)
         localStorage.setItem("theme", newTheme)
-        
+
         updateThemeButton(newTheme)
     })
 
+
+    let thisTimeInGMT = new Date(new Date().toLocaleString('en-GB', { timeZone: "Europe/London" }));
+    let thisTime = new Date();
+
+    let hoursDiff = thisTime.getHours() - thisTimeInGMT.getHours();
+    let hoursString = ""
+
+    if (hoursDiff == 0) {
+        hoursString = "the same timezone as you!"
+    } else if (hoursDiff > 0) {
+        hoursString`${hoursDiff} hours head of you!`
+    } else if (hoursDiff < 0) {
+        hoursString = `${Math.abs(hoursDiff)} hours behind you!`
+    }
+
     const strProps = {
-        age: Math.abs(new Date(Date.now() - new Date('28 Nov 2003 00:00:00 GMT')).getFullYear() - 1970)
+        age: Math.abs(new Date(Date.now() - new Date('28 Nov 2003 00:00:00 GMT')).getFullYear() - 1970),
+        timeZoneOffset: hoursString
     }
 
     $("b").each(function () {
@@ -40,7 +56,7 @@ $(() => {
         $(this).text(text)
     })
 
-    $(".logo").click(function() {
+    $(".logo").click(function () {
         $(this).addClass("footer-anim")
         $(".footer-anim-logo").addClass("animated")
         $(".car-container").addClass("animated")
@@ -53,6 +69,7 @@ $(() => {
         }, 10000)
     })
 
+    let tags = []
     fetch("./projects.json").then((data) => data.json())
         .then((json) => {
             projects = json
@@ -65,6 +82,18 @@ $(() => {
 
                         <h2>${project.name}</h2>
                     </a>
+                `)
+                tags.push(...project.tags)
+            }
+            tags = Array.from(new Set(tags))
+            console.log(tags)
+
+            $("#projects").prepend(`<div class="tags" id="filter-tags"></div>`)
+
+            for (let tag of tags) {
+
+                $("#filter-tags").prepend(`
+                    <span class="tag">${tag}</span>
                 `)
             }
         })
@@ -112,8 +141,11 @@ function refreshSections() {
     setTimeout(() => {
         $("section").hide()
         const t = $(window.location.hash).show()
+
         if (!t.length) {
             $("#about").show()
+        } else {
+            $(t).css({ opacity: 0 }).fadeTo("slow", 1)
         }
     }, 1)
 }
@@ -124,10 +156,10 @@ function toggleResponsiveNav() {
 
 function setColourScheme() {
     let theme = "dark"
-    
+
     if (localStorage.getItem("theme")) {
         theme = localStorage.getItem("theme")
-    }else if (window.matchMedia) {
+    } else if (window.matchMedia) {
         if (window.matchMedia("(prefers-color-scheme: light)").matches) {
             theme = "light"
         }

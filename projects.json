@@ -49,22 +49,34 @@
         ]
     },
     {
+        "id": "rv",
+        "name": "ReconnectVelocity",
+        "description": "Velocity plugin that saves the last connected server of your players and attempts to reconnect them when rejoining. Very extensive customization options.",
+        "thumb": "https://github.com/Matt-MX/ReconnectVelocity/raw/master/img/rc_banner.png",
+        "tags": [
+            "Velocity", "Java", "Plugin", "SQL"
+        ]
+    },
+    {
+        "id": "nametags",
+        "name": "NameTags",
+        "description": "PaperMC plugin aimed at repalcing players' nametags with much sleeker text-display entities.",
+        "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
+        "url": {
+            "url": "https://github.com/Matt-MX/DisplayNameTags",
+            "label": "GitHub"
+        },
+        "tags": [
+            "Paper", "Java", "Library", "Public"
+        ]
+    },
+    {
         "id": "website",
         "name": "Portfolio",
         "description": "The website you're on now, created using plain HTML/CSS/JS. Have you found any little secrets yet?",
         "thumb": "/assets/me.png",
         "tags": [
             "HTML", "CSS", "JS", "Frontend", "Public"
-        ]
-    },
-    {
-        "id": "rv",
-        "name": "ReconnectVelocity",
-        "description": "Velocity plugin that saves the last connected server of your players and attempts to reconnect them when rejoining. Very extensive customization options.",
-        "thumb": "https://github.com/Matt-MX/ReconnectVelocity/raw/master/rc_banner.png",
-        "class": "archived",
-        "tags": [
-            "Velocity", "Java", "Plugin", "SQL"
         ]
     }
 ]

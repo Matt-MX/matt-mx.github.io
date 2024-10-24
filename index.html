@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./game.css">
     <script src="main.js" lang="js"></script>
-    <script src="game.js" lang="js"></script>
+    <!-- <script src="game.js" lang="js"></script> -->
 
     <meta charset="UTF-8">
     <meta name="description" content="View MattMX's software projects and developments.">
@@ -82,11 +82,26 @@
             </section>
 
             <section id="resume">
-                <h1>meow</h1>
+                <h1><i class="fa fa-file"></i> Resume</h1>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam impedit temporibus, harum perspiciatis esse quisquam, enim minus similique sequi quas praesentium beatae atque nihil quod quos doloremque vel! Voluptas, cumque?</p>
             </section>
 
             <section id="contact">
-                <h1>Contact</h1>
+                <h1><i class="fa fa-at"></i> Contact</h1>
+
+                <p>
+                    My time zone is GMT/BST which is <b>{{timeZoneOffset}}</b>
+                    <br>
+                    Please take this into account if contacting me!
+                </p>
+
+                <ul>
+                    <li><a href="mailto:mattmcconville@outlook.com"><i class="fa fa-envelope-o"></i>mattmcconville@outlook.com</a></li>
+                    <li><a href="https://github.com/Matt-MX"><i class="fa fa-github"></i>Matt-MX</a></li>
+                    <li><a href="https://discord.gg">mattmx</a></li>
+                    <li><a href="https://linkedin.com/"><i class="fa fa-linkedin-square"></i>Matthew McConville</a></li>
+                </ul>
             </section>
         </div>
 
@@ -136,24 +151,38 @@
             </div>
         </footer>
 
-        <div id="runner-game" class="game visible">
-            <div class="game-sky">
+        <!-- <div id="runner-game" class="game visible">
+            <div class="game-sky" id="runner-game-sky">
+                <div id="runner-game-text">
+                    <h1>Click or press space to <span>start</span></h1>
+                </div>
                 <div class="player-wrapper">
-                    <div id="runner-player" class="player avatar-mask">
+                    <div id="runner-player" class="player fallen avatar-mask">
                         <div></div>
+                    </div>
+                    <div id="runner-player-z">
+                        <p>z</p>
+                        <p>z</p>
+                        <p>z</p>
+                    </div>
+                    <div id="runner-player-stars">
+                        <p>&starf;</p>
+                        <p>&starf;</p>
+                        <p>&starf;</p>
+                        <p>&starf;</p>
                     </div>
                 </div>
                 <div id="runner-objects" class="game-obj">
-                    <!-- <div class="obj" style="width: 2rem; height: 2rem;"></div> -->
+                    <div class="obj" style="width: 2rem; height: 2rem;"></div>
                 </div>
             </div>
             <div class="game-floor">
             </div>
             <div class="score">
-                <h3>Distance <span id="runner-game-score">0m</span></h3>
+                <h3>Score <span id="runner-game-score">0</span></h3>
                 <h3>Speed <span id="runner-game-speed">100%</span></h3>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 

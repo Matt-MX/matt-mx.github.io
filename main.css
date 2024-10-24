@@ -523,7 +523,7 @@ a {
     box-sizing: border-box;
 }
 
-.modal > .tags {
+.tags {
     display: flex;
     /* justify-content: center; */
     gap: 0.2rem;
@@ -533,11 +533,20 @@ a {
     justify-content: flex-start;
 }
 
-.modal > .tags > span {
+.tags > span {
     padding: 0.1rem 1rem;
     background-color: var(--bg-primary-light);
     border-radius: 0.2rem;
     box-sizing: border-box;
+}
+
+#filter-tags {
+    padding: 0;
+    cursor: pointer;
+}
+
+#filter-tags > span {
+    flex: 0;
 }
 
 footer {
@@ -947,6 +956,51 @@ footer .footer-anim-logo.animated > div {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#contact > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0rem;
+    box-sizing: border-box;
+}
+
+#contact > ul > li {
+    list-style-type: '';
+    flex: 48%;
+}
+
+#contact > ul > li > a {
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border: 1px solid var(--bg-primary-light);
+    border-radius: 0.4rem;
+    display: flex;
+    gap: 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#contact > ul > li > a:hover {
+    background: var(--bg-primary-medium);
+    border: 1px solid var(--bg-primary-light); 
+    color: var(--text-primary);
+
+    transform-origin: center;
+    transform: scale(1.01);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#contact > ul > li > a > i {
+    font-size: 1.25rem;
+}
+
+#resume > h1 {
+    padding-bottom: 1rem;
 }
 
 @media only screen and (max-width: 600px) {

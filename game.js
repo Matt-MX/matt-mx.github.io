@@ -2,7 +2,7 @@ $(function () {
     let visible = true
     let objs = []
     let active = false
-    let speed = 0.1
+    let speed = 1
     let score = 0
 
     function actionJump() {
@@ -16,34 +16,64 @@ $(function () {
         $("#runner-player").addClass("jump")
         setTimeout(() => {
             $("#runner-player").removeClass("jump")
-        }, 700)
+        }, 500)
+    }
+
+    function rand(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     function populateObjects() {
         objs = []
         $("#runner-objects").empty()
-        $("#runner-objects").append(`
-            <div class="obj" style="width: 2rem; height: 2rem;"></div>
-        `)
-        const last = $("#runner-objects").children(":last-child").get(0)
-        objs.push(last)
+
+        let nextBox = 0
+        let max = rand(30, 100)
+        for (let i = 0; i < max; i++) {
+            if (nextBox == 0) {
+                $("#runner-objects").append(`
+                    <div class="obj" style="width: 2rem; height: 2rem;"></div>
+                `)
+                nextBox = rand(30, max - i)
+            } else {
+                $("#runner-objects").append(`
+                    <div style="width: 2rem;"></div>
+                `)
+                nextBox--
+            }
+        }
+        const last = $("#runner-objects").children(".obj").toArray()
+        for (let obj of last) {
+            objs.push(obj)
+        }
     }
 
     function moveObjects() {
         populateObjects()
+        const dur = Math.max(300, 5000 - speed * 100)
         $("#runner-objects").animate({
-            left: "-200rem"
+            left: "200rem"
         }, {
-            duration: 1000 * (1 / speed),
+            duration: dur,
             easing: "linear",
             complete: function () {
-                $(this).css({ left: "100%" })
-                console.log("test")
+                $(this).css({ left: "-200rem" })
                 if (active) {
-                    speed += 0.1
+                    speed += 1
                     $("#runner-game-speed").text(`${speed * 100}%`)
                     moveObjects()
                 }
+            }
+        })
+        $("#runner-game-sky").animate({
+            'background-position-x': '-100%'
+        }, {
+            duration: dur * 1.5,
+            easing: "linear",
+            complete: function () {
+                $(this).css({
+                    'background-position-x': '100%'
+                })
             }
         })
     }
@@ -78,9 +108,9 @@ $(function () {
         let gameOver = false
         i++
 
-        if (i >= 100) {
+        if (i >= 10) {
             i = 0
-            setScore(score + (1 / speed))
+            setScore(score + speed)
         }
 
         for (let i = 0; i < objs.length; i++) {
@@ -99,14 +129,40 @@ $(function () {
         }
     }
 
+    function setText(html) {
+        const text = $("#runner-game-text")
+        text.empty()
+        text.html(html)
+    }
+
     function startGame() {
         active = true
         window.requestAnimationFrame(loop)
+        speed = 1
+        $("#runner-game-speed").text(`${speed * 100}%`)
+        score = 0
         moveObjects()
+        setText(`<h2>Click to jump! Avoid the obstacles!</h2>`)
+        $("#runner-player-z").hide()
+        $("#runner-player").removeClass("fallen")
+        $("#runner-player").addClass("active")
+        $("#runner-player-stars").hide()
     }
 
     function stopGame() {
         active = false
-        console.log("GAME OVER!")
+
+        $("#runner-player-z").show()
+        $("#runner-player").removeClass("active")
+        setTimeout(() => {
+            $("#runner-player").addClass("fallen")
+        }, 1)
+        $("#runner-player-stars").show()
+        $("#runner-objects").empty()
+
+        setText(`
+            <h1>Game over!</h1>
+            <h2>Click to start again!</h2>
+        `)
     }
 })
