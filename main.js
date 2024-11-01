@@ -19,7 +19,7 @@ $(() => {
     })
 
     $("#toggle-theme").on("click", function (event) {
-        const newTheme = document.documentElement.getAttribute("data-theme") == "dark"
+        const newTheme = document.documentElement.getAttribute("data-theme") === "dark"
             ? "light" : "dark"
 
         document.documentElement.setAttribute("data-theme", newTheme)
@@ -69,7 +69,7 @@ $(() => {
         }, 10000)
     })
 
-    let tags = []
+    let allTags = []
     fetch("./projects.json").then((data) => data.json())
         .then((json) => {
             projects = json
@@ -77,19 +77,20 @@ $(() => {
                 $("#projects").append(`
                     <a class="project ${project.class}" href="#projects" onclick='showProjectModal("${project.id}")'>
                         <div class="thumb">
-                            <img class="thumb" src="${project.thumb || "/assets/thumb.png"}">
+                            <img class="thumb" src="${project.thumb || "/assets/placeholder.png"}">
                         </div>
 
                         <h2>${project.name}</h2>
                     </a>
                 `)
-                tags.push(...project.tags)
+                allTags.push(...project.tags)
             }
-            tags = Array.from(new Set(tags))
-            console.log(tags)
+            allTags = Array.from(new Set(allTags))
+            console.log(allTags)
 
             $("#projects").prepend(`<div class="tags" id="filter-tags"></div>`)
 
+            return
             for (let tag of tags) {
 
                 $("#filter-tags").prepend(`
@@ -120,7 +121,7 @@ function showProjectModal(id) {
                 <i class="fa fa-close"></i>
             </button>
                 <div class="thumb">
-                    <img src="${project.thumb || "/assets/thumb.png"}">
+                    <img src="${project.thumb || "/assets/placeholder.png"}">
                     <div class="overlay"></div>
                 </div>
                 <div class="text">
@@ -169,6 +170,7 @@ function setColourScheme() {
         document.documentElement.setAttribute("data-theme", "light")
     }
     updateThemeButton(theme)
+    console.log(theme)
 }
 
 function updateThemeButton(theme) {

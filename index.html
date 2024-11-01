@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="./game.css">
+    <!-- <link rel="stylesheet" href="./game.css"> -->
     <script src="main.js" lang="js"></script>
     <!-- <script src="game.js" lang="js"></script> -->
 
@@ -59,15 +59,16 @@
 
                 <h3>About me</h3>
                 <p>
-                    I'm a <b>{{age}}</b> year old software developer living in England.
+                    I'm a <b>{{age}}</b> year old software developer living in Manchester, England.
                 </p>
                 <p>
-                    I'm experienced and interested in full stack and backend development,
-                    as well as API design and networking.
+                    I've got experience in writing backend and frontend, with an interest in API
+                    design and creating libraries.
                 </p>
                 <p>
-                    In my own time I often develop for my Minecraft server, PvPHub, which
-                    pulls in over 200 players per day.
+                    I've got plenty of personal <a href="#projects" onclick="refreshSections()">projects</a>, mostly working on Minecraft libraries or
+                    plugins for my server. Minecraft is where my passion for programming began, and it
+                    lead to me pursuing a career in it.
                 </p>
                 <p>
                     Currently studying a degree in software engineering, I'm always looking
@@ -84,9 +85,11 @@
             <section id="resume">
                 <h1><i class="fa fa-file"></i> Resume</h1>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam impedit temporibus, harum
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam impedit temporibus, harum
                     perspiciatis esse quisquam, enim minus similique sequi quas praesentium beatae atque nihil quod quos
-                    doloremque vel! Voluptas, cumque?</p>
+                    doloremque vel! Voluptas, cumque?
+                </p>
             </section>
 
             <section id="contact">
@@ -101,8 +104,8 @@
                 <ul>
                     <li><a href="mailto:mattmcconville@outlook.com"><i
                                 class="fa fa-envelope-o"></i>mattmcconville@outlook.com</a></li>
-                    <li><a href="https://github.com/Matt-MX"><i class="fa fa-github"></i>Matt-MX</a></li>
-                    <li><a href="https://discord.com/users/312693889582759938">
+                    <li><a target="_blank" href="https://github.com/Matt-MX"><i class="fa fa-github"></i>Matt-MX</a></li>
+                    <li><a target="_blank" href="https://discord.com/users/312693889582759938">
                             <svg width="18px" viewBox="0 -28.5 256 256" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 preserveAspectRatio="xMidYMid">
@@ -116,8 +119,18 @@
                             </svg>
                             mattmx
                         </a></li>
-                    <li><a href="https://linkedin.com/"><i class="fa fa-linkedin-square"></i>Matthew McConville</a></li>
+                    <li><a target="_blank" href="https://linkedin.com/"><i class="fa fa-linkedin-square"></i>Matthew McConville</a></li>
                 </ul>
+            </section>
+
+            <section id="friends">
+                <h1>Friends</h1>
+
+                <div class="friends-cards-container">
+                    <a class="card" href="google.com" target="_blank">
+                        <img src="https://kibty.town/files/img/buttons/notnite-badge.png">
+                    </a>
+                </div>
             </section>
         </div>
 
@@ -160,6 +173,7 @@
                         <a href="#projects" onclick="refreshSections()">Projects</a>
                         <a href="#resume" onclick="refreshSections()">Resume</a>
                         <a href="#contact" onclick="refreshSections()">Contact</a>
+                        <a href="#friends" onclick="refreshSections()">Friends</a>
                     </div>
                 </div>
                 <p><i class="fa fa-copyright"></i> mattmx.dev 2024</p>
