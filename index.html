@@ -8,7 +8,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./main.css">
+    <!-- <link rel="stylesheet" href="./game.css"> -->
     <script src="main.js" lang="js"></script>
+    <!-- <script src="game.js" lang="js"></script> -->
 
     <meta charset="UTF-8">
     <meta name="description" content="View MattMX's software projects and developments.">
@@ -25,7 +27,6 @@
         </div>
         <h2>Loading</h2>
     </div>
-    <!-- https://www.google.com/search?q=ui+portfolio+projects&sca_esv=de6110bbe0542023&sca_upv=1&rlz=1C1ONGR_en-GBGB992GB992&udm=2&biw=1920&bih=911&sxsrf=ADLYWIJP6E49MvYJrrKDYTcRsRWDRpQrVA%3A1716934973498&ei=PVlWZvuFHqz_7_UPjvmIqA8&ved=0ahUKEwi7mMqZsbGGAxWs_7sIHY48AvUQ4dUDCBA&uact=5&oq=ui+portfolio+projects&gs_lp=Egxnd3Mtd2l6LXNlcnAiFXVpIHBvcnRmb2xpbyBwcm9qZWN0czIHEAAYgAQYGEjwJFDCBlirJHABeACQAQCYAaQCoAGnDaoBBjIwLjAuMbgBA8gBAPgBAZgCFqAC1w3CAgkQABiABBgYGArCAgoQABiABBhDGIoFwgIIEAAYgAQYsQPCAgUQABiABMICDRAAGIAEGLEDGEMYigXCAgYQABgFGB7CAgYQABgIGB7CAgQQABgemAMAiAYBkgcGMjEuMC4xoAfoUQ&sclient=gws-wiz-serp#vhid=bxW_1UIRBfGWIM&vssid=mosaic -->
     <div class="main-container">
 
         <div class="nav-container">
@@ -59,15 +60,16 @@
 
                 <h3>About me</h3>
                 <p>
-                    I'm a <b>{{age}}</b> year old software developer living in England.
+                    I'm a <b>{{age}}</b> year old software developer living in Manchester, England.
                 </p>
                 <p>
-                    I'm experienced and interested in full stack and backend development,
-                    as well as API design and networking.
+                    I've got experience in writing backend and frontend, with an interest in API
+                    design and creating libraries.
                 </p>
                 <p>
-                    In my own time I often develop for my Minecraft server, PvPHub, which
-                    pulls in over 200 players per day.
+                    I've got plenty of personal <a href="#projects" onclick="refreshSections()">projects</a>, mostly working on Minecraft libraries or
+                    plugins for my server. Minecraft is where my passion for programming began, and it
+                    lead to me pursuing a career in it.
                 </p>
                 <p>
                     Currently studying a degree in software engineering, I'm always looking
@@ -82,11 +84,54 @@
             </section>
 
             <section id="resume">
-                <h1>meow</h1>
+                <h1><i class="fa fa-file"></i> Resume</h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam impedit temporibus, harum
+                    perspiciatis esse quisquam, enim minus similique sequi quas praesentium beatae atque nihil quod quos
+                    doloremque vel! Voluptas, cumque?
+                </p>
             </section>
 
             <section id="contact">
-                <h1>Contact</h1>
+                <h1><i class="fa fa-at"></i> Contact</h1>
+
+                <p>
+                    My time zone is GMT/BST which is <b>{{timeZoneOffset}}</b>
+                    <br>
+                    Please take this into account if contacting me!
+                </p>
+
+                <ul>
+                    <li><a href="mailto:mattmcconville@outlook.com"><i
+                                class="fa fa-envelope-o"></i>mattmcconville@outlook.com</a></li>
+                    <li><a target="_blank" href="https://github.com/Matt-MX"><i class="fa fa-github"></i>Matt-MX</a></li>
+                    <li><a target="_blank" href="https://discord.com/users/312693889582759938">
+                            <svg width="18px" viewBox="0 -28.5 256 256" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                preserveAspectRatio="xMidYMid">
+                                <g>
+                                    <path
+                                        d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"
+                                        fill="var(--text-primary)"
+                                        > 
+                                    </path>
+                                </g>
+                            </svg>
+                            mattmx
+                        </a></li>
+                    <li><a target="_blank" href="https://linkedin.com/"><i class="fa fa-linkedin-square"></i>Matthew McConville</a></li>
+                </ul>
+            </section>
+
+            <section id="friends">
+                <h1>Friends</h1>
+
+                <div class="friends-cards-container">
+                    <a class="card" href="google.com" target="_blank">
+                        <img src="https://kibty.town/files/img/buttons/notnite-badge.png">
+                    </a>
+                </div>
             </section>
         </div>
 
@@ -129,12 +174,46 @@
                         <a href="#projects" onclick="refreshSections()">Projects</a>
                         <a href="#resume" onclick="refreshSections()">Resume</a>
                         <a href="#contact" onclick="refreshSections()">Contact</a>
+                        <a href="#friends" onclick="refreshSections()">Friends</a>
                     </div>
                 </div>
                 <p><i class="fa fa-copyright"></i> mattmx.dev 2024</p>
                 <!-- <p>All displayed content belongs to me, MattMX, the copyright holder.</p> -->
             </div>
         </footer>
+
+        <!-- <div id="runner-game" class="game visible">
+            <div class="game-sky" id="runner-game-sky">
+                <div id="runner-game-text">
+                    <h1>Click or press space to <span>start</span></h1>
+                </div>
+                <div class="player-wrapper">
+                    <div id="runner-player" class="player fallen avatar-mask">
+                        <div></div>
+                    </div>
+                    <div id="runner-player-z">
+                        <p>z</p>
+                        <p>z</p>
+                        <p>z</p>
+                    </div>
+                    <div id="runner-player-stars">
+                        <p>&starf;</p>
+                        <p>&starf;</p>
+                        <p>&starf;</p>
+                        <p>&starf;</p>
+                    </div>
+                </div>
+                <div id="runner-objects" class="game-obj">
+                    <div class="obj" style="width: 2rem; height: 2rem;"></div>
+                </div>
+            </div>
+            <div class="game-floor">
+            </div>
+            <div class="score">
+                <h3>Score <span id="runner-game-score">0</span></h3>
+                <h3>Speed <span id="runner-game-speed">100%</span></h3>
+            </div>
+        </div> -->
     </div>
 </body>
 

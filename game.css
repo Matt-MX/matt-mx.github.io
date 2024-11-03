@@ -1,0 +1,237 @@
+.game {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9999;
+    /* display: flex; */
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.game.visible {
+    display: flex;
+}
+
+.game .score {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--bg-primary-medium);
+}
+
+.game-floor {
+    width: 100%;
+    flex: 0.6;
+    background-color: var(--bg-primary-medium);
+}
+
+.game-sky {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    background-color: var(--bg-primary-heavy);
+    /* https://stackoverflow.com/questions/33948011/creating-a-starry-background-in-css */
+    background-image:
+        radial-gradient(var(--bg-primary-medium), rgba(0, 0, 0, 0) 2px, transparent 40px),
+        radial-gradient(var(--bg-primary-medium), rgba(0, 0, 0, 0) 1px, transparent 30px),
+        radial-gradient(var(--bg-primary-medium), rgba(0, 0, 0, 0) 2px, transparent 40px),
+        radial-gradient(var(--bg-primary-medium), rgba(0, 0, 0, 0) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+}
+
+.game-sky > .player-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+#runner-game-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    color: var(--bg-primary-medium);
+    text-align: center;
+}
+
+.player-wrapper > .player {
+    animation: none !important;
+    height: 1rem;
+    width: 1rem;
+
+    transform-origin: bottom;
+}
+
+.player-wrapper > .avatar-mask > div {
+    left: 0rem;
+    top: -2rem;
+    position: relative;
+    transform: none;
+    background-color: var(--bg-primary-medium);
+    transform: scaleX(-1) translateY(6px);
+}
+
+.player.active {
+    animation: player-run 0.3s linear infinite !important;
+}
+
+.player.fallen {
+    transform: rotate(-90deg) scaleX(0.7) scaleY(1.4) translateX(-10px);
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: 2s player-fallen 2s linear infinite !important;
+}
+
+#runner-player-z {
+    position: absolute;
+    transform: translate(-2.5rem, -3rem);
+}
+
+#runner-player-z p {
+    position: absolute;
+    opacity: 0;
+    animation: sleepy-z 4s linear infinite;
+    font-size: xx-large;
+    font-weight: 900;
+    color: var(--bg-primary-medium);
+}
+
+#runner-player-z > p:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#runner-player-z > p:nth-child(2) {
+    animation-delay: 2s;
+}
+
+#runner-player-z > p:nth-child(3) {
+    animation-delay: 2.7s;
+}
+
+@keyframes sleepy-z {
+    0% {
+        opacity: 0;
+        transform: rotate(20deg) scale(0.5);
+    }
+    3% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(30deg) scale(1.4) translate(3px, -5rem);
+    }
+}
+
+@keyframes player-fallen {
+    0% {
+        transform: rotate(-90deg) scaleX(0.7) scaleY(1.4) translateX(-10px);
+    }
+    50% {
+        transform: rotate(-90deg) scaleX(0.8) scaleY(1.4) translateX(-10px) skew(-5deg);
+    }
+    100% {
+        transform: rotate(-90deg) scaleX(0.7) scaleY(1.4) translateX(-10px);  
+    }
+}
+
+#runner-player-stars {
+    position: absolute;
+    transform: translate(-2.5rem, -3rem);
+    display: none;
+}
+
+#runner-player-stars > p {
+    position: absolute;
+    color: var(--bg-primary-medium);
+    opacity: 0;
+    animation: player-stars 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#runner-player-stars > p:nth-child(1) {
+    font-size: 10rem;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-duration: 2s;
+}
+
+#runner-player-stars > p:nth-child(2) {
+    font-size: 6.5rem;
+    left: 3.5rem;
+    animation-delay: 0.3s;
+}
+
+#runner-player-stars > p:nth-child(3) {
+    font-size: 13rem;
+    left: -3.5rem;
+    animation-delay: 0.2s;
+}
+
+#runner-player-stars > p:nth-child(4) {
+    font-size: 15rem;
+    /* bottom: -1rem; */
+    top: -2rem;
+    left: -1rem;
+    animation-duration: 2s;
+}
+
+@keyframes player-stars {
+    0% {
+        transform: translate(-50%, -50%) scale(0.0);
+    }
+    2%, 60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.0) rotate(30deg);
+    }
+}
+
+.player.jump {
+    animation: player-jump 0.75s linear !important;
+}
+
+@keyframes player-jump {
+    0%, 5% {
+        transform: scaleY(0.7);
+    }
+    20% {
+        transform: translateY(-70px);
+    }
+    60% {
+        transform: scaleY(1.1);
+    }
+}
+
+@keyframes player-run {
+    33.33% {
+        transform: translateY(-3px) rotate(3deg);
+    }
+    66.66% {
+        transform: rotate(-3deg);
+    }
+    99.99% {
+        transform: rotate(0deg);
+    }
+}
+
+.game-sky > .game-obj {
+    position: absolute;
+    width: 200rem;
+    right: 0;
+    bottom: 0;
+}
+
+.game-obj > * {
+    margin: 0;
+    display: inline-block;
+}
+
+.game-obj > .obj {
+    background-color: var(--bg-primary-medium);
+}

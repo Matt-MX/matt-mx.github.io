@@ -2,7 +2,7 @@
     {
         "id": "ktgui",
         "name": "KtPaperGui",
-        "description": "A high level library for creating Paper plugins. Create advanced guis flawlessly with the kotlin dsl, with signals. Features commands, events, components, scoreboards, scheduling and more!",
+        "description": "A high level library for creating Paper plugins. Create advanced guis flawlessly with the kotlin dsl, with signals. Features commands, events, components, scoreboards, scheduling and more! I've always encountered issues when using other libraries for guis in Bukkit, and decided to make my own with Essential.gg's gui library as inspiration.",
         "thumb": "https://repository-images.githubusercontent.com/530062987/b0abfd50-7b6d-42c5-b65b-094877030a25",
         "url": {
             "url": "https://github.com/Matt-MX/KtPaperGui",
@@ -16,9 +16,18 @@
         "id": "iris",
         "name": "Iris",
         "description": "A scalable architecture for my Minecraft server, PvPHub. It allows for multiple backend servers to connect together seemlessly with a strong API to help make more advanced features!",
-        "thumb": "https://blog.pvphub.me/content/images/size/w1200/2023/01/background.png",
+        "thumb": "",
         "tags": [
             "Private", "Paper", "Kotlin", "REDiS", "MongoDB", "Packets"
+        ]
+    },
+    {
+        "id": "duels",
+        "name": "Duels",
+        "description": "",
+        "thumb": "",
+        "tags": [
+            "Private", "Paper", "Kotlin", "MongoDB", "Gui", "Plugin"
         ]
     },
     {
@@ -34,7 +43,7 @@
         "id": "pkits",
         "name": "Playerkits",
         "description": "Private, high-level plugin for PvPHub compiled using KtPaperGui. Allows players to create kits with high customization and features.",
-        "thumb": "https://media.discordapp.net/attachments/1068003290983444550/1239991665708765276/image.png?ex=66580d7b&is=6656bbfb&hm=c66e16b167c1d7ed0f56a69eb2f2e1e205cbfeeec85e23cec9c7a12e8604bcbd&=&format=webp&quality=lossless&width=1182&height=560",
+        "thumb": "",
         "tags": [
             "Private", "Paper", "Kotlin", "MongoDB", "SQL", "Plugin"
         ]
@@ -43,28 +52,40 @@
         "id": "event",
         "name": "Events",
         "description": "High level plugin for hosting in-game events. Extremely cutomizable, allowing any player to choose how the event runs and manage it along the way.",
-        "thumb": "https://media.discordapp.net/attachments/1238288481781026846/1238846570963800106/image.png?ex=6657d787&is=66568607&hm=b47389fbc8385fc4436ee2e283219c634d5ed75eff09315210c2f8779a219a75&=&format=webp&quality=lossless&width=550&height=276",
+        "thumb": "",
         "tags": [
             "Private", "Paper", "Kotlin", "MongoDB", "Plugin", "Gui", "REDiS"
-        ]
-    },
-    {
-        "id": "website",
-        "name": "Portfolio",
-        "description": "The website you're on now, created using plain HTML/CSS/JS. Have you found any little secrets yet?",
-        "thumb": "/assets/me.png",
-        "tags": [
-            "HTML", "CSS", "JS", "Frontend", "Public"
         ]
     },
     {
         "id": "rv",
         "name": "ReconnectVelocity",
         "description": "Velocity plugin that saves the last connected server of your players and attempts to reconnect them when rejoining. Very extensive customization options.",
-        "thumb": "https://github.com/Matt-MX/ReconnectVelocity/raw/master/rc_banner.png",
-        "class": "archived",
+        "thumb": "https://github.com/Matt-MX/ReconnectVelocity/raw/master/img/rc_banner.png",
         "tags": [
             "Velocity", "Java", "Plugin", "SQL"
+        ]
+    },
+    {
+        "id": "nametags",
+        "name": "NameTags",
+        "description": "PaperMC plugin aimed at replacing players' nametags with much more stylish and customizable text-display entities. It provides a powerful and extensible API for developer usage, as well as javadocs and a small wiki.",
+        "thumb": "",
+        "url": {
+            "url": "https://github.com/Matt-MX/DisplayNameTags",
+            "label": "GitHub"
+        },
+        "tags": [
+            "Paper", "Java", "Library", "Public"
+        ]
+    },
+    {
+        "id": "website",
+        "name": "Portfolio",
+        "description": "The website you're on now, created using plain HTML/CSS/JS and some jQuery because I don't hate my life that much. Have you found any little secrets yet?",
+        "thumb": "/assets/me.png",
+        "tags": [
+            "HTML", "CSS", "JS", "Frontend", "Public"
         ]
     }
 ]
