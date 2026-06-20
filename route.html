@@ -51,6 +51,14 @@
             border: none;
             cursor: pointer;
         }
+
+        select {
+            padding: 0.5rem;
+            background: var(--bg-primary-light);
+            color: var(--text-primary);
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -63,16 +71,35 @@
     </p>
 
     <div class="form-group">
+
+        <select name="Format" id="app">
+            <option value="" selected>Select Format</option>
+
+            <option value="myroutes">MyRoutes</option>
+            <option value="google-maps">Google Maps</option>
+        </select>
+
         <input type="file" id="fileInput" accept=".gpx,.xml" />
+
         <textarea id="output" readonly placeholder="Lat/lon pairs will appear here..."></textarea>
         <button id="copyBtn">Copy to Clipboard</button>
     </div>
     <script>
-        document.getElementById("fileInput").addEventListener("change", function (event) {
-            const file = event.target.files[0];
-            if (!file) return;
+        function createExport(file) {
+            
+            const format = document.getElementById("app").value;
+            if (!format) return;
 
             const reader = new FileReader();
+
+            switch (format) {
+                case "myroutes":
+                    document.getElementById("copyBtn").innerText = "Copy to Clipboard";
+                    break;
+                case "google-maps":
+                    document.getElementById("copyBtn").innerText = "Open in Google Maps";
+                    break;
+            }
 
             reader.onload = function (e) {
                 const text = e.target.result;
@@ -83,12 +110,26 @@
                 const points = xmlDoc.getElementsByTagName("rtept");
                 let output = [];
 
+                const format = document.getElementById("app").value;
+                if (format == "google-maps") {
+                    output.push("https://www.google.com/maps/dir/");
+                }
+
                 for (let i = 0; i < points.length; i++) {
                     const lat = points[i].getAttribute("lat");
                     const lon = points[i].getAttribute("lon");
 
                     if (lat && lon) {
-                        output.push(`${lat} ${lon}`);
+                        const format = document.getElementById("app").value;
+
+                        switch (format) {
+                            case "myroutes":
+                                output.push(`${lat} ${lon}`);
+                                break;
+                            case "google-maps":
+                                output.push(`${lat},${lon}/`);
+                                break;
+                        }
                     }
                 }
 
@@ -99,15 +140,41 @@
             };
 
             reader.readAsText(file);
-        });
-        document.getElementById("copyBtn").addEventListener("click", async function () {
-            const text = document.getElementById("output").value;
-            if (!text) return;
+        };
 
-            await navigator.clipboard.writeText(text);
-            const status = document.getElementById("status");
-            status.textContent = "Copied!";
-            setTimeout(() => status.textContent = "", 2000);
+        document.getElementById("fileInput").addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                createExport(file);
+            }
+        });
+
+        document.getElementById("app").addEventListener("change", function () {
+            const fileInput = document.getElementById("fileInput");
+            if (fileInput.files.length > 0) {
+                createExport(fileInput.files[0]);
+            }
+        });
+
+        document.getElementById("copyBtn").addEventListener("click", async function () {
+
+            const format = document.getElementById("app").value;
+            if (!format) return;
+
+            switch (format) {
+                case "google-maps":
+                    window.open(document.getElementById("output").value, "_blank");
+                    break;
+                default:
+                    const text = document.getElementById("output").value;
+                    if (!text) return;
+
+                    await navigator.clipboard.writeText(text);
+                    const status = document.getElementById("status");
+                    status.textContent = "Copied!";
+                    setTimeout(() => status.textContent = "", 2000);
+                    break;
+            }
         });
     </script>
 </body>
