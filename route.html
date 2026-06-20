@@ -13,13 +13,14 @@
         textarea {
             width: 100%;
             height: 400px;
-            margin-top: 20px;
             font-family: monospace;
             background: var(--bg-primary-medium);
             color: var(--text-primary);
             padding: 0.25rem;
-            border-radius: 0.25rem;
-            border: 2px solid var(--bg-primary-light);
+            box-sizing:border-box;
+            border: none;
+            outline: none;
+            resize: none;
         }
 
         textarea::placeholder {
@@ -30,21 +31,24 @@
             margin-top: 2rem;
             display: flex;
             flex-direction: column;
-            gap: 0.1rem;
-        }
-
-        input#fileInput {
-            padding: 1.5rem 1rem;
+            position: relative;
+            box-sizing:border-box;
             border-radius: 0.25rem;
             border: 2px solid var(--bg-primary-light);
         }
-
         input[type="file"]::file-selector-button {
             background: var(--bg-primary-light);
             color: var(--text-primary);
             border: none;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        button#copyBtn {
+            padding: 0.5rem;
+            background: var(--bg-primary-light);
+            color: var(--text-primary);
+            border: none;
             cursor: pointer;
         }
     </style>
@@ -61,6 +65,7 @@
     <div class="form-group">
         <input type="file" id="fileInput" accept=".gpx,.xml" />
         <textarea id="output" readonly placeholder="Lat/lon pairs will appear here..."></textarea>
+        <button id="copyBtn">Copy to Clipboard</button>
     </div>
     <script>
         document.getElementById("fileInput").addEventListener("change", function (event) {
@@ -94,6 +99,15 @@
             };
 
             reader.readAsText(file);
+        });
+        document.getElementById("copyBtn").addEventListener("click", async function () {
+            const text = document.getElementById("output").value;
+            if (!text) return;
+
+            await navigator.clipboard.writeText(text);
+            const status = document.getElementById("status");
+            status.textContent = "Copied!";
+            setTimeout(() => status.textContent = "", 2000);
         });
     </script>
 </body>
