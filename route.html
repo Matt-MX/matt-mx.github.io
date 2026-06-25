@@ -59,15 +59,36 @@
             border: none;
             cursor: pointer;
         }
+
+        div#google-maps-options {
+            background: var(--bg-primary-medium);
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--bg-primary-light);
+            box-sizing: border-box;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            display: flex;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--bg-primary-light);
+            margin-right: 0.25rem;
+            vertical-align: middle;
+        }
+
+        label {
+    display: inline-block;
+    vertical-align: middle;
+        }
     </style>
 </head>
 <body>
-    <h2>Upload GPX File</h2>
+    <h2>GPX File Utility</h2>
     <p>
-        This webpage tool remaps a <code>gpx</code> file exported from Roads by Porsche into a list of latitude and longitude pairs.
+        This webpage tool remaps a <code>gpx</code> file exported from Roads by Porsche into a list of latitude and longitude pairs, which can be used
         <br>
-        The output can be pasted into <a href="https://www.myrouteonline.com/user-guides/waze-route-planner" target="_blank">MyRoute</a>, and 
-        ran through <a href="https://www.waze.com/" target="_blank">Waze</a> for a pleasurable drive.
+        to create a route in <a href="https://www.google.com/maps/" target="_blank">Google Maps</a> or
+        <a href="https://www.myrouteonline.com/" target="_blank">MyRoute</a> + <a href="https://www.waze.com/" target="_blank">Waze</a>.
     </p>
 
     <div class="form-group">
@@ -80,6 +101,12 @@
         </select>
 
         <input type="file" id="fileInput" accept=".gpx,.xml" />
+
+        <div id="google-maps-options" style="display: none;">
+            <label for="google-maps-options:myLocation">
+                <input type="checkbox" id="google-maps-options:myLocation" checked> My Location as first waypoint
+            </label>
+        </div>
 
         <textarea id="output" readonly placeholder="Lat/lon pairs will appear here..."></textarea>
         <button id="copyBtn">Copy to Clipboard</button>
@@ -113,6 +140,11 @@
                 const format = document.getElementById("app").value;
                 if (format == "google-maps") {
                     output.push("https://www.google.com/maps/dir/");
+                }
+
+                const firstMyLocation = document.getElementById("google-maps-options:myLocation");
+                if (format == "google-maps" && firstMyLocation.checked) {
+                    output.push("My+Location/");
                 }
 
                 for (let i = 0; i < points.length; i++) {
@@ -153,6 +185,13 @@
             const fileInput = document.getElementById("fileInput");
             if (fileInput.files.length > 0) {
                 createExport(fileInput.files[0]);
+            }
+
+            const googleMapsOptions = document.getElementById("google-maps-options");
+            if (this.value === "google-maps") {
+                googleMapsOptions.style.display = "flex";
+            } else {
+                googleMapsOptions.style.display = "none";
             }
         });
 
