@@ -10,7 +10,7 @@ $(() => {
                 "opacity": 0,
                 "pointer-events": "none"
             })
-    }, 4)
+    }, 0)
 
     $("#modal-container").on("click", function (event) {
         if (event.target == $(this).get(0)) {

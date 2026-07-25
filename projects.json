@@ -70,7 +70,7 @@
         "id": "nametags",
         "name": "NameTags",
         "description": "PaperMC plugin aimed at replacing players' nametags with much more stylish and customizable text-display entities. It provides a powerful and extensible API for developer usage, as well as javadocs and a small wiki.",
-        "thumb": "",
+        "thumb": "https://github.com/Matt-MX/DisplayNameTags/raw/main/nametags.gif",
         "url": {
             "url": "https://github.com/Matt-MX/DisplayNameTags",
             "label": "GitHub"
