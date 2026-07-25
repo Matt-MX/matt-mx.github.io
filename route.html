@@ -156,7 +156,7 @@
 
                         switch (format) {
                             case "myroutes":
-                                output.push(`${lat} ${lon}`);
+                                output.push(`${lat} ${lon}\n`);
                                 break;
                             case "google-maps":
                                 output.push(`${lat},${lon}/`);
@@ -167,7 +167,7 @@
 
                 document.getElementById("output").value =
                     output.length > 0
-                        ? output.join("\n")
+                        ? output.join("")
                         : "No track points found.";
             };
 
